@@ -1,0 +1,5 @@
+.gradle/
+build/
+bookmarks.iml
+bookmarks.ipr
+bookmarks.iws

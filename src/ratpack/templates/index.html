@@ -12,7 +12,7 @@
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="stylesheet" href="lib/normalize/normalize.css">
-  <link rel="stylesheet" href="styles/ratpack.css">
+  <link rel="stylesheet" href="styles/bookmarks.css">
 
   <!-- build:js scripts/modernizr.js -->
   <script src="lib/modernizr/modernizr.js"></script>
@@ -26,6 +26,16 @@
 
   <section>
     <h1>${model.title}</h1>
+    <div>
+        <form action="/bookmarks" method="post" id="add">
+
+            <input name="title" type="text" placeholder="Title" width="40"required><br/>
+            <input name="url" type="url" placeholder="URL" width="20" required><br/>
+            <input name="tags" type="text" placeholder="Tags" width="20"><br/>
+            <textarea name="notes" maxlength="1024" placeholder="Notes" width="20 "></textarea><br/>
+            <input name="submit" type="submit">
+        </form>
+    </div>
     <p>Bookmarks found for user:</p>
     <% if (model.bookmarks.size() == 0) { %>
       <p>No bookmarks have been created yet.</p>
@@ -42,7 +52,6 @@
   </script>
 
   <!-- build:js scripts/jquery.js -->
-  <script src="lib/jquery/jquery.min.js"></script>
   <!-- endbuild -->
 </body>
 </html>
